@@ -1,13 +1,5 @@
 title: Claudio Malvino
 description: High-performance scientific software in C++ and Python.
 url: "https://claudiormalvino.github.io"
-theme: minima
-
-github_username: ClaudioRMalvino
-linkedin_username: claudiomalvino
-
-header_pages:
-  - projects.md
-  - publications.md
 
 markdown: kramdown
