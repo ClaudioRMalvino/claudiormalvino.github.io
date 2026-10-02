@@ -1,0 +1,146 @@
+---
+---
+
+@import "minima";
+
+/* ---- Palette: matches the resume accent (#0e6e55) ---- */
+:root {
+  --accent: #0e6e55;
+  --accent-soft: #e8f2ef;
+  --text: #1a1a1a;
+  --text-muted: #5a6560;
+  --bg: #ffffff;
+  --rule: #d8dedb;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #4fb596;
+    --accent-soft: #11211c;
+    --text: #e6e8e7;
+    --text-muted: #9aa5a0;
+    --bg: #121514;
+    --rule: #2a312e;
+  }
+}
+
+/* ---- Base ---- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.wrapper {
+  max-width: 760px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+
+  &:visited { color: var(--accent); }
+  &:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+}
+
+/* ---- Header / nav ---- */
+.site-header {
+  border-top: 4px solid var(--accent);
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg);
+}
+
+.site-title,
+.site-title:visited {
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  background: var(--bg);
+
+  .page-link {
+    color: var(--text);
+    &:hover { color: var(--accent); }
+  }
+}
+
+/* ---- Headings: thin rule under h2, like the resume sections ---- */
+h1, h2, h3 {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.post-content h2,
+.page-content h2 {
+  color: var(--accent);
+  font-size: 1.35rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+  margin-top: 2.2rem;
+}
+
+/* Project metadata lines (the italic line under each project title) */
+.post-content h2 + p > em,
+.page-content h2 + p > em {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  color: var(--text-muted);
+
+  .footer-heading { color: var(--text); }
+  a { color: var(--accent); }
+}
+
+.svg-icon { fill: var(--text-muted); }
+
+/* ---- Code ---- */
+code, pre {
+  background: var(--accent-soft);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--text);
+}
+
+/* ---- Resume download button ---- */
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  margin: 6px 0;
+  background: var(--accent);
+  color: #ffffff !important;
+  border-radius: 5px;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: none;
+    filter: brightness(1.1);
+  }
+}
+
+/* ---- Post list on the home page ---- */
+.post-list {
+  li { margin-bottom: 18px; }
+
+  .post-meta { color: var(--text-muted); }
+
+  .post-link {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+}
+
+/* ---- Small screens ---- */
+@media screen and (max-width: 600px) {
+  body { font-size: 16px; }
+}

@@ -13,6 +13,8 @@ I hold an MPhil in Scientific Computing from the University of Cambridge (2026) 
 - Published [Physics-TUI](https://github.com/ClaudioRMalvino/Physics-TUI), a terminal physics reference with 82 unit tests and strict typing.
 - Currently building [Tensile](https://github.com/ClaudioRMalvino/Tensile), a C++23 header-only linear algebra library.
 
-See [projects](/projects.html) for details, or download my [resume (PDF)](/assets/Claudio-Malvino-Resume.pdf).
+See [projects](/projects.html) for details.
+
+<a class="btn" href="/assets/Claudio-Malvino-Resume.pdf">Download Resume (PDF)</a>
 
 **Contact:** [claudiormal@gmail.com](mailto:claudiormal@gmail.com) · [GitHub](https://github.com/ClaudioRMalvino) · [LinkedIn](https://www.linkedin.com/in/claudiomalvino)
