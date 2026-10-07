@@ -13,18 +13,22 @@
   --btn-text: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --accent: #4fb596;
-    --accent-soft: #14201b;
-    --text: #e6e8e7;
-    --text-muted: #9aa5a0;
-    --bg: #121514;
-    --bg-card: #181c1a;
-    --rule: #2a312e;
-    --btn-text: #0c1512;
-  }
+@mixin dark-palette {
+  --accent: #4fb596;
+  --accent-soft: #14201b;
+  --text: #e6e8e7;
+  --text-muted: #9aa5a0;
+  --bg: #121514;
+  --bg-card: #181c1a;
+  --rule: #2a312e;
+  --btn-text: #0c1512;
 }
+
+/* Follow the device setting unless the visitor picked a theme with the toggle */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { @include dark-palette; }
+}
+:root[data-theme="dark"] { @include dark-palette; }
 
 * { box-sizing: border-box; }
 
@@ -59,7 +63,25 @@ a {
 }
 a:hover { text-decoration: underline; }
 
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin-left: 22px;
+  padding: 6px;
+  background: none;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
 /* Keyboard focus */
+button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
@@ -360,4 +382,13 @@ pre {
   .hero h1 { font-size: 2rem; }
   .header-inner { flex-direction: column; gap: 8px; }
   .site-nav a { margin: 0 7px; font-size: 0.95rem; }
+  /* Pin the toggle to the header corner so the links keep one line */
+  .header-inner { position: relative; }
+  .theme-toggle {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    margin: 0;
+    padding: 4px;
+  }
 }
