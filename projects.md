@@ -47,8 +47,14 @@ A header-only linear algebra library I am actively building: expression template
 
 A Monte Carlo engine pricing European call/put options under geometric Brownian motion, exposed to Python via pybind11 with type stubs and a CMake build.
 
-- Parallelized with OpenMP using per-thread RNG streams and deterministic seeding, so prices are exactly reproducible: ~4× speedup on a 4-core/8-thread CPU, with the serial C++ engine ~3.3× faster than pure Python.
-- Immutable, const-correct option class with input validation; reproducible benchmark suite; CI on GitHub Actions.
+- Parallelized with OpenMP using per-thread RNG streams and deterministic seeding, so prices are exactly reproducible: ~4× speedup on a 4-core/8-thread CPU, with the serial C++ engine ~19× faster than pure Python.
+- Validated against the Black–Scholes closed form: the pricing error falls as 1/√N across six decades of path count, matching the analytically predicted standard error.
+- Immutable, const-correct option class with input validation; reproducible benchmark suite.
+
+<figure class="figure">
+  <a href="{{ '/assets/figures/pricer-convergence.svg' | relative_url }}"><img src="{{ '/assets/figures/pricer-convergence.svg' | relative_url }}" width="504" height="324" loading="lazy" alt="Log-log plot of call and put pricing error against number of paths from 100 to 100 million. The measured points lie on the predicted one-over-root-N lines."></a>
+  <figcaption>RMS pricing error against the Black–Scholes value over 32 independent seeds. Dashed lines are the predicted standard error, σ/√N; the fitted convergence order is −0.51 for the call and −0.49 for the put.</figcaption>
+</figure>
 
 ## Parallel Molecular Dynamics Simulation
 
