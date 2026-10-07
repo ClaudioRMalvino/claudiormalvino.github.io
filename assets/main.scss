@@ -150,6 +150,11 @@ a:focus-visible {
   margin: 0 0 10px;
 }
 
+.about-link {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
 .meta-line {
   color: var(--text-muted);
   font-size: 0.95rem;
@@ -381,6 +386,12 @@ pre {
   .hero { padding-top: 36px; }
   .hero h1 { font-size: 2rem; }
   .header-inner { flex-direction: column; gap: 8px; }
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 4px;
+  }
   .site-nav a { margin: 0 7px; font-size: 0.95rem; }
   /* Pin the toggle to the header corner so the links keep one line */
   .header-inner { position: relative; }
