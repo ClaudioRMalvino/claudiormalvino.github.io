@@ -7,6 +7,7 @@ layout: default
   <p class="meta-line">MPhil in Scientific Computing, University of Cambridge (2026) · New York City · Open to software engineering, quantitative developer, and scientific computing roles</p>
   <div class="actions">
     <a class="btn" href="/assets/Claudio-Malvino-Resume.pdf">Download Resume</a>
+    <a class="btn btn-outline" href="mailto:claudiormal@gmail.com">Email me</a>
     <a class="btn btn-outline" href="/projects.html">View Projects</a>
     <a class="btn btn-outline" href="https://github.com/ClaudioRMalvino">GitHub</a>
     <a class="btn btn-outline" href="https://www.linkedin.com/in/claudiomalvino">LinkedIn</a>
@@ -16,10 +17,21 @@ layout: default
 <section>
   <h2>Featured work</h2>
   <div class="cards">
-    <div class="card">
-      <h3><a href="https://github.com/cp2k/cp2k/pull/5747">CP2K Optimization</a></h3>
+    <div class="card card-featured">
+      <p class="badge">Merged upstream · cp2k/cp2k #5747</p>
+      <h3><a href="https://github.com/cp2k/cp2k/pull/5747">CP2K: OpenMP threading for neural-network potentials</a></h3>
       <p class="meta">Fortran/C · OpenMP · HPC</p>
-      <p>Redesigned the OpenMP parallelization of neural-network potential forces in a major open-source simulation package: a 42× speedup over serial on 76 cores, merged upstream, with output bit-for-bit identical to the original.</p>
+      <p>CP2K is a widely used open-source molecular simulation package. I redesigned how its neural-network potential forces are parallelized, and the change is now in the main repository.</p>
+      <ul class="stats">
+        <li><strong>42×</strong><span>faster than serial on 76 cores</span></li>
+        <li><strong>57×</strong><span>faster than the previous threaded path</span></li>
+        <li><strong>0</strong><span>force difference from serial, at any thread count</span></li>
+      </ul>
+      <figure class="figure">
+        <a href="{{ '/projects.html#cp2k' | relative_url }}"><img src="{{ '/assets/figures/cp2k-pr-omp-scaling.png' | relative_url }}" width="2000" height="795" alt="Benchmark from the pull request: time per MD step and speedup from 1 to 76 cores. The existing OpenMP path stays flat; the new one reaches a 42 times speedup."></a>
+        <figcaption>Benchmark from the pull request, 1,024 H₂O on a 76-core node: grey is the existing threading, teal is mine.</figcaption>
+      </figure>
+      <p><a href="https://github.com/cp2k/cp2k/pull/5747">Pull request</a> · <a href="{{ '/projects.html#cp2k' | relative_url }}">Details and thesis work →</a></p>
     </div>
     <div class="card">
       <h3><a href="https://github.com/ClaudioRMalvino/Tensile">Tensile</a></h3>
@@ -41,9 +53,19 @@ layout: default
 </section>
 
 <section>
+  <h2>Background</h2>
+  <ul class="pub-list">
+    <li><strong>MPhil in Scientific Computing</strong>, University of Cambridge (2025–2026). Research project: performance optimization of CP2K.</li>
+    <li><strong>B.S. Applied Computational Physics</strong>, magna cum laude, CUNY New York City College of Technology (2021–2023).</li>
+    <li><strong>Works in:</strong> C++ (17/20/23), Python, Fortran, OpenMP, MPI, CUDA, CMake, Slurm.</li>
+  </ul>
+  <p class="more-link"><a href="{{ '/experience.html' | relative_url }}">Full experience →</a></p>
+</section>
+
+<section>
   <h2>Publications</h2>
   <ul class="pub-list">
-    <li>Kezerashvili, R.Y., Luo, J., <strong>Malvino, C.R.</strong> <em>On an Exactly Solvable Two-Body Problem in Two-Dimensional Quantum Mechanics.</em> Few-Body Systems (2023).</li>
-    <li>Kezerashvili, R.Y., Luo, J., <strong>Malvino, C.R.</strong>, Spiridonova, A. <em>Kratzer Potentials in Two Dimensions: Exact Solutions and Exciton Applications.</em> International Journal of Theoretical Physics (2025).</li>
+    <li>Kezerashvili, R.Y., Luo, J., <strong>Malvino, C.R.</strong> <em>On an Exactly Solvable Two-Body Problem in Two-Dimensional Quantum Mechanics.</em> Few-Body Systems (2023). <a href="https://doi.org/10.1007/s00601-023-01859-0">doi:10.1007/s00601-023-01859-0</a></li>
+    <li>Kezerashvili, R.Y., Luo, J., <strong>Malvino, C.R.</strong>, Spiridonova, A. <em>Kratzer Potentials in Two Dimensions: Exact Solutions and Exciton Applications.</em> International Journal of Theoretical Physics (2025). <a href="https://doi.org/10.1007/s10773-025-06150-y">doi:10.1007/s10773-025-06150-y</a></li>
   </ul>
 </section>

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Publications
+description: Peer-reviewed publications by Claudio Malvino on exactly solvable two-dimensional quantum mechanics and exciton physics.
 permalink: /publications.html
 ---
 

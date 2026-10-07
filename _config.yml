@@ -1,5 +1,29 @@
 title: Claudio Malvino
+tagline: High-Performance Scientific Software
 description: High-performance scientific software in C++ and Python.
 url: "https://claudiormalvino.github.io"
+lang: en
+
+author: Claudio Malvino
+
+# Used by jekyll-seo-tag to tell search engines which profiles belong to this site.
+social:
+  name: Claudio Malvino
+  links:
+    - https://github.com/ClaudioRMalvino
+    - https://www.linkedin.com/in/claudiomalvino
+
+# Image shown when a link to any page is shared (LinkedIn, Slack, etc.).
+twitter:
+  card: summary_large_image
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og-image.png
 
 markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
